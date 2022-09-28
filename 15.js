@@ -75,6 +75,7 @@ function newGame() {
             cell.onclick = cellClick;
             cell.innerHTML = arr[i][j];
             row.appendChild(cell);
+            cell.style.border = "2px solid red";
         }
         tbody.appendChild(row);
     }
