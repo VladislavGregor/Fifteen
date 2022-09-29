@@ -1,16 +1,11 @@
 <style>
+.box {
+  text-align: center;
+}
 
   tr {font-size: 100%}
 
   td {background: lightgrey}
-
-.table_center_by_css {
-
-width: 300px;
-
-border: 1px solid #000;
-
-margin: auto;
 
 }
 </style>
