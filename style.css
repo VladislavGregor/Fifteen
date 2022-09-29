@@ -4,16 +4,13 @@
 
   td {background: lightgrey}
 
-  tr {font-size: 100%}
+.table_center_by_css {
 
-  td {background: lightgrey}
+width: 300px;
 
-  tr {font-size: 100%}
+border: 1px solid #000;
 
-  td {background: lightgrey}
+margin: auto;
 
-  tr {font-size: 100%}
-
-  td {background: lightgrey}
-
+}
 </style>
