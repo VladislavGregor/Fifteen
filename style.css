@@ -1,11 +1,10 @@
-<style>
-.box {
+
+body {
   text-align: center;
+
+
+  .tr {font-size: 100%}
+
+  .td {background: lightgrey}
+
 }
-
-  tr {font-size: 100%}
-
-  td {background: lightgrey}
-
-}
-</style>
