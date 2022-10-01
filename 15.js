@@ -23,7 +23,7 @@ function cellClick(event) {
         ei = i;
         ej = j;
         var q = true;
-        for (i = 0; i < 4; ++i)
+        for (i = 0; i < 4; ++i)  
             for (j = 0; j < 4; ++j)
                 if (i + j != 6 && document.getElementById(i + " " + j).innerHTML != i * 4 + j + 1) {
                     q = false;
@@ -66,16 +66,18 @@ function newGame() {
     
     var table = document.createElement("table"),
         tbody = document.createElement("tbody");
+        table.classList.add("table");
     table.appendChild(tbody);
     for (i = 0; i < 4; ++i) {
         var row = document.createElement("tr");
         for (j = 0; j < 4; ++j) {
             var cell = document.createElement("td");
+            cell.classList.add("cell");
             cell.id = i + " " + j;
             cell.onclick = cellClick;
             cell.innerHTML = arr[i][j];
             row.appendChild(cell);
-            cell.style.border = "2px solid red";
+
         }
         tbody.appendChild(row);
     }
