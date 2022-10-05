@@ -34,6 +34,7 @@ function cellClick(event) {
 }
 
 function newGame() {
+    document.body.style.backgroundColor = colors [GetRandomNumber()];
     for (i = 0; i < 4; ++i) {
         arr[i] = []
         for (j = 0; j < 4; ++j) {
@@ -43,6 +44,7 @@ function newGame() {
                 arr[i][j] = "";
         }
     }
+
 
     function GetRandom() {
      ei = 3;
@@ -85,3 +87,10 @@ function newGame() {
         box.removeChild(box.firstChild);
     box.appendChild(table);
 }
+
+const colors = ["#FF5733","#F9FF33","#3371FF","red","green"];
+
+function GetRandomNumber () {
+    return Math.floor(Math.random()*colors.length);
+}
+

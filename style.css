@@ -19,10 +19,13 @@ align-items: center;
   padding:8px;
   border: 2px solid #222;
   width: 1535px;
+  height:10vh;
   border-radius: 10px;
   background-color: transparent;
   color:#222;
-  cursor: pointer;
+  cursor: pointer;  
+  align-items: center;
+  font-size: 100%;
  }
 
  .reset:hover {
