@@ -15,12 +15,20 @@ let matrix = getMatrix(
 
 setPositionItems(matrix);
 
+
 document.getElementById('shuffle').addEventListener('click', () => {
     const flatMatrix = matrix.flat();
     const shuffledArray = shuffleArray(matrix.flat());
     matrix = getMatrix(shuffledArray);
     setPositionItems(matrix);
+    document.body.style.backgroundColor = colors [GetRandomNumber()];
 })
+
+const colors = ["#FF5733","#F9FF33","#3371FF","red","green"];
+
+function GetRandomNumber () {
+    return Math.floor(Math.random()*colors.length);
+}
 
 const blankNumber = 16;
 
