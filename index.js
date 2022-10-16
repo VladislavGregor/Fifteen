@@ -8,6 +8,9 @@ if (itemNodes.length != 16) {
     throw new Error(`Должно быть ровно  ${countItems} items in HTML`);
 }
 
+
+// Простановка позиций шашечек:
+
 itemNodes[countItems - 1].style.display = 'none';
 let matrix = getMatrix(
     itemNodes.map((item) => Number(item.dataset.matrixId))
@@ -15,6 +18,8 @@ let matrix = getMatrix(
 
 setPositionItems(matrix);
 
+
+// Перемешивание:
 
 document.getElementById('shuffle').addEventListener('click', () => {
     const flatMatrix = matrix.flat();
@@ -29,6 +34,9 @@ const colors = ["#FF5733","#F9FF33","#3371FF","red","green"];
 function GetRandomNumber () {
     return Math.floor(Math.random()*colors.length);
 }
+
+
+// Смена позиции шашечки по клику:
 
 const blankNumber = 16;
 
@@ -49,6 +57,9 @@ containerNode.addEventListener('click', (event) => {
 
     }
 })
+
+
+// Вспомогательные функции:
 
 function getMatrix(arr){
     const matrix = [[], [], [], []];
@@ -78,11 +89,6 @@ function setPositionItems(matrix){
     }
 
 }
-
-
-
-
-
 
 function setNodeStyles(node, x, y) {
     const shiftPs = 100;
@@ -120,6 +126,9 @@ function swap (coords1, coords2, matrix) {
     matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
     matrix[coords2.y][coords2.x] = coords1Number;
 
+    
+// Подсветка при выигрыше:
+
     if (isWon(matrix)) {
         addWonClass();
 
@@ -151,6 +160,8 @@ function addWonClass() {
 }
 
 
+
+// Смена позиции шашечки по стрелкам:
 
 window.addEventListener('keydown', (event) => {
     if(!event.key.includes('Arrow')) {
