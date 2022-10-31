@@ -15,6 +15,8 @@ let matrix = GetMatrix(
     itemNodes.map((item) => Number(item.dataset.matrixId))
 );
 
+setPositionItems(matrix);
+
 console.log(matrix);
 
 function GetMatrix(arr) {
@@ -38,8 +40,20 @@ function GetMatrix(arr) {
 }
 
 
+function setPositionItems (matrix) {
+    for ( let y = 0 ; y < matrix.length; y++) {
+        for (let x = 0; x < matrix.length; x++) {
+            const value = matrix [y][x];
+            const node = itemNodes[value - 1];
+            setNodeStyles(node, x, y)
+        }
+    }
+}
 
-
+function setNodeStyles (node, x ,y) {
+    const shiftPs = 100;
+    node.style.transform = `translate3D(${x * shiftPs}%, ${y* shiftPs}%, 0) `
+}
 
 
 
