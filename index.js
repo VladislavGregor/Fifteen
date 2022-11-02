@@ -11,6 +11,7 @@ if (itemNodes.length != 16) {
 
 // output flat filled matrix in console
 
+itemNodes[countItems-1].style.display = 'none';
 let matrix = GetMatrix(
     itemNodes.map((item) => Number(item.dataset.matrixId))
 );
@@ -35,9 +36,18 @@ function GetMatrix(arr) {
     matrix[y][x] = arr[i];
     x++;
 }
-
+ 
     return matrix;
 }
+
+
+// shuffle by clicking button
+
+document.getElementById('shuffle').addEventListener('click', () => {
+    const shuffledArray = shuffleArray(matrix.flat());
+    matrix = GetMatrix(shuffledArray);
+    setPositionItems(matrix);
+})
 
 
 function setPositionItems (matrix) {
@@ -55,5 +65,13 @@ function setNodeStyles (node, x ,y) {
     node.style.transform = `translate3D(${x * shiftPs}%, ${y* shiftPs}%, 0) `
 }
 
+//change position by click 
 
 
+
+function shuffleArray(arr){
+    return arr
+    .map(value => ({value, sort: Math.random()}))
+    .sort((a, b) => a.sort - b.sort)
+    .map (({value}) => value)
+}
