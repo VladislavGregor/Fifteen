@@ -11,9 +11,31 @@ if (itemNodes.length != 16) {
 
 // output flat filled matrix in console
 
-console.log(
-    itemNodes.map((item) => item.dataset.matrixId)
-)
+let matrix = GetMatrix(
+    itemNodes.map((item) => Number(item.dataset.matrixId))
+);
+
+console.log(matrix);
+
+function GetMatrix(arr) {
+
+    const matrix = [[], [], [], []];
+    let y = 0;
+    let x = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+
+    if (x >= 4) {
+        x = 0;
+        y++;
+    }
+    
+    matrix[y][x] = arr[i];
+    x++;
+}
+
+    return matrix;
+}
 
 
 
