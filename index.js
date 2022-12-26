@@ -11,8 +11,14 @@ if (itemNodes.length != 16) {
 
 // output flat filled matrix in console
 
+console.log(itemNodes);
+
+for(var i=0 ; i<16; i++){
+    itemNodes[i] = i+1;
+}
+
 let matrix = GetMatrix(
-    itemNodes.map((item) => Number(item.dataset.matrixId))
+    itemNodes
 );
 
 console.log(matrix);
