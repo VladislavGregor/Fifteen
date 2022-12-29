@@ -13,9 +13,6 @@ if (itemNodes.length != 16) {
 
 itemNodes[countItems-1].style.display = 'none';
 
-//let matrix = GetMatrix(
- // itemNodes.map((item) => Number(item.dataset.matrixId))
-//);
 
 let arr = [];
 
